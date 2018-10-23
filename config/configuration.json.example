@@ -1,7 +1,0 @@
-const apiKey = '8jIlukbQYYjPAhI0TfVlqDqzQwLtQr9C7hW0UMyVjWj'
-const apiSecret = 'kPZPQ4Y15TQXdVqXm1rcYBwnznbyTQRcr9ymBI0kuXb'
-
-{
-  "apiKey" = '8jIlukbQYYjPAhI0TfVlqDqzQwLtQr9C7hW0UMyVjWj'
-  "apiSecret" = 'kPZPQ4Y15TQXdVqXm1rcYBwnznbyTQRcr9ymBI0kuXb'
-}

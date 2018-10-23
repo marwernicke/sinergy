@@ -1,9 +1,8 @@
 const BFX = require('bitfinex-api-node')
-const keys = require('config/configuration.json.example')
+const keys = require('./config/config.js')
 
 // const apiKey = '8jIlukbQYYjPAhI0TfVlqDqzQwLtQr9C7hW0UMyVjWj'
 // const apiSecret = 'kPZPQ4Y15TQXdVqXm1rcYBwnznbyTQRcr9ymBI0kuXb'
-
 const apiKey = keys.apiKey
 const apiSecret = keys.apiSecret
 
@@ -24,9 +23,8 @@ const call = async () => {
   for (i = 0; i < 10; i++) {
     const req = await rest2.ticker('tXRPUSD')
     prices.push(req.lastPrice.toFixed(5))
-    console.log(prices)
   }
+  console.log(prices)
 }
 
 call()
-console.log(process.argv)
