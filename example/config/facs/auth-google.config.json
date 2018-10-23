@@ -1,0 +1,15 @@
+{
+  "a0": {
+    "google" : {
+      "clientId": "test-client-id",
+      "clientSecret": "test-client-secret"
+    },
+    "ADM_USERS" : [
+      {
+        "email": "ezequiel@bitfinex.com",
+        "password": "example123",
+        "level": 0
+      }
+    ]
+  }
+}

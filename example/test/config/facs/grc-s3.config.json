@@ -1,0 +1,7 @@
+{
+  "s0": {
+    "bucket": "test-bucket",
+    "acl": "public-read",
+    "contentDisposition": "attachment"
+  }
+}

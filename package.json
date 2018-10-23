@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/marwernicke/sinergy#readme",
   "dependencies": {
+    "argv": "0.0.2",
     "bitfinex-api-node": "^2.0.1"
   },
   "devDependencies": {
