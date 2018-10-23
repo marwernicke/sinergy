@@ -12,9 +12,16 @@ const rest2 = bfx.rest(2, {
   // options
   transform: true
 })
+
+var prices = []
+
 const call = async () => {
-  const req = await rest2.ticker('tXRPUSD')
-  console.log('req', req)
+  var i
+  for (i = 0; i < 10; i++) {
+    const req = await rest2.ticker('tXRPUSD')
+    prices.push(req.lastPrice.toFixed(4))
+    console.log(prices)
+  }
 }
 
 call()
