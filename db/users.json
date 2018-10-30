@@ -1,0 +1,19 @@
+[
+  {
+    "user": "marcos",
+    "pwd": "3575",
+    "roles": ["readWrite"]
+  },
+  {
+    "user": "ezequiel",
+    "pwd": "35325",
+    "roles": []
+  }
+
+]
+
+db.createUser({
+  "user": "marcos",
+  "pwd": "3575",
+  "roles": ["readWrite"]
+})

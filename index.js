@@ -1,30 +1,25 @@
-const BFX = require('bitfinex-api-node')
-const keys = require('./config/config.js')
+const finder = require('./finder')
 
-// const apiKey = '8jIlukbQYYjPAhI0TfVlqDqzQwLtQr9C7hW0UMyVjWj'
-// const apiSecret = 'kPZPQ4Y15TQXdVqXm1rcYBwnznbyTQRcr9ymBI0kuXb'
-const apiKey = keys.apiKey
-const apiSecret = keys.apiSecret
+// ////////////// MAIN //////////////// //
+const fetchStart = finder.date(23, 10, 2018)
+const fetchEnd = finder.date(24, 10, 2018)
 
-const bfx = new BFX({
-  apiKey,
-  apiSecret
-})
+const readStart = finder.date(25, 10, 2018)
+const readEnd = finder.date(26, 10, 2018)
 
-const rest2 = bfx.rest(2, {
-  // options
-  transform: true
-})
-
-var prices = []
-
-const call = async () => {
-  var i
-  for (i = 0; i < 10; i++) {
-    const req = await rest2.ticker('tXRPUSD')
-    prices.push(req.lastPrice.toFixed(5))
-  }
-  console.log(prices)
+module.exports = {
+  fetchStart,
+  fetchEnd,
+  readStart,
+  readEnd
 }
 
-call()
+async function main () {
+  console.log('inicializando...')
+  const tradesArray = await finder.fetchTrades('tXRPUSD', fetchStart, fetchEnd)
+  console.log('datos buscados2')
+  await finder.fillDb(tradesArray)
+  console.log('datos cargados2')
+  console.log(await finder.leerDb(readStart, readEnd))
+}
+main()
